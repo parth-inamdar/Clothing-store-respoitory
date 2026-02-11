@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Store - Home</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        header { background-color: #333; color: white; padding: 1rem; text-align: center; }
+        nav { background-color: #444; padding: 0.5rem; display: flex; justify-content: center; }
+        nav a { color: white; margin: 0 1rem; text-decoration: none; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 1rem; }
+        .hero { text-align: center; padding: 2rem; background: white; margin-bottom: 2rem; }
+        footer { background: #333; color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Clothing Store</h1>
+        <p>Your one-stop shop for trendy clothes in India</p>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <div class="container">
+        <section class="hero">
+            <h2>Welcome to Our Store</h2>
+            <p>Discover the latest fashion with prices in Indian Rupees. All prices include GST. Shop now!</p>
+            <a href="products.html"><button style="background: #28a745; color: white; border: none; padding: 0.5rem 1rem; cursor: pointer;">Browse Products</button></a>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2023 Clothing Store. All rights reserved.</p>
+    </footer>
+    <script>
+        // Load cart count from localStorage
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            document.getElementById('cart-count').textContent = cart.length;
+        }
+        updateCartCount();
+    </script>
+</body>
+</html>
